@@ -2,7 +2,7 @@
   "name": "betflags",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "main.js",
   "dependencies": {
     "express": "^4.8.7",
     "linereader": "^1.0.0",
@@ -10,10 +10,12 @@
   },
   "devDependencies": {
     "cli-progress": "^2.1.1",
+    "electron": "^4.0.5",
     "line-reader": "^0.2.4"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ."
   },
   "author": "",
   "license": "ISC"

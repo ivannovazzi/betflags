@@ -1,6 +1,8 @@
 
 # Current tests files
 lists
+src/flags
+
 # Logs
 logs
 *.log
