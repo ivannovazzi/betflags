@@ -11,6 +11,7 @@
   "devDependencies": {
     "cli-progress": "^2.1.1",
     "electron": "^4.0.5",
+    "electron-packager": "^13.1.0",
     "line-reader": "^0.2.4"
   },
   "scripts": {
