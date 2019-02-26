@@ -2,6 +2,7 @@
 # Current tests files
 lists
 dist
+release-builds
 src/flags
 
 # Logs
