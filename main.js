@@ -8,20 +8,23 @@ function createWindow () {
     resizable: false,
     width: 800,
     height: 600,
+    webPreferences: {
+      experimentalFeatures: true
+    }
   })
   win.loadFile('src/index.html');
   
 }
 
-const runExec = async (filePath) => {
-  const send = function(type, total, len, files) {
-    if (type === 'run') {
-      win.webContents.send('progress' , {current: len, total: total, files: files});
-    } else {
-      win.webContents.send('end', {});
-    }
-
+const send = function(type, total, len, files) {
+  if (type === 'run') {
+    win.webContents.send('progress' , {current: len, total: total, files: files});
+  } else {
+    win.webContents.send('end', {});
   }
+}
+
+const runExec = async (filePath) => {
   downloader(filePath, send);
 }
 
