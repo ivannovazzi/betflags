@@ -11,13 +11,43 @@
   "devDependencies": {
     "cli-progress": "^2.1.1",
     "electron": "^4.0.5",
+    "electron-builder": "^20.38.5",
     "electron-packager": "^13.1.0",
     "line-reader": "^0.2.4"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "electron ."
+    "start": "electron .",
+    "pack": "build --dir",
+    "dist": "build"
   },
+  "build": {
+    "dmg": {
+      "contents": [
+        {
+          "x": 110,
+          "y": 150
+        },
+        {
+          "x": 240,
+          "y": 150,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ]
+    },
+    "win": {
+      "target": "squirrel",
+      "icon": "build/icon.ico"
+    }
+  },
+
   "author": "",
   "license": "ISC"
 }

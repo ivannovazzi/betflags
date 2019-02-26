@@ -1,6 +1,7 @@
 
 # Current tests files
 lists
+dist
 src/flags
 
 # Logs
