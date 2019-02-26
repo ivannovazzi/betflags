@@ -4,12 +4,10 @@
   "description": "",
   "main": "main.js",
   "dependencies": {
-    "linereader": "^1.0.0",
-    "request": "^2.40.0",
-    "line-reader": "^0.2.4"
+    "line-reader": "^0.2.4",
+    "request": "^2.40.0"
   },
   "devDependencies": {
-    "cli-progress": "^2.1.1",
     "electron": "^4.0.5",
     "electron-builder": "^20.38.5",
     "electron-packager": "^13.1.0"
