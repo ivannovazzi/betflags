@@ -4,7 +4,6 @@
   "description": "",
   "main": "main.js",
   "dependencies": {
-    "express": "^4.8.7",
     "linereader": "^1.0.0",
     "request": "^2.40.0",
     "line-reader": "^0.2.4"
@@ -18,7 +17,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "electron .",
-    "pack": "electron-packager . bet-steal --overwrite --asar=true --platform=win32 --arch=ia32 --icon=build/steal.ico --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"Bet Steal\"",
+    "pack": "electron-packager . bet-steal --overwrite --platform=win32 --arch=ia32 --icon=build/steal.ico --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"Bet Steal\"",
     "dist": "build"
   },
   "build": {

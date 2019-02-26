@@ -42,7 +42,7 @@
         border: 2px solid #fff;
         border-radius: 10px;
         height: 50px;
-        width: 200px;
+        width: 270px;
         background: #39f;
         color: #fff;
         text-align: center;
@@ -149,6 +149,7 @@
       const button = document.getElementById('myBtn');
       const barBox = document.getElementById('bar__box');
       const values = document.getElementById('values');
+      
       let run = false;
       let progressButtonIndex = 0;
       let buttonInterval;
@@ -184,7 +185,7 @@
 
       const end = function() {
         clearInterval(buttonInterval);
-        button.innerHTML = 'Enjoy your flags';
+        button.innerHTML = 'Show me what I\'ve stolen';
         button.className = 'success';
         barBox.className = '';
         button.disabled = false;

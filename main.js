@@ -1,6 +1,7 @@
 const { app, BrowserWindow, shell } = require('electron')
 const { downloader } = require('./src/downloader');
 const path = require('path');
+const flagsPath = path.join(require('os').homedir(), 'Desktop','flags');
 
 let win;
 function createWindow () {
@@ -29,8 +30,8 @@ const runExec = async (filePath) => {
   downloader(filePath, send);
 }
 
-const finish = () => {
-  shell.openItem(path.join(__dirname, 'src', 'flags'));
+const finish = async () => {
+  shell.openItem(flagsPath);
   setTimeout(() => win.close(), 3000);
 }
 

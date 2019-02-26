@@ -1,10 +1,9 @@
 const fs = require('fs');
-const path = require('path');
 const request = require('request');
 const lineReader = require('line-reader');
 const filelist = new Array(); 
-
-const flagsPath = path.join(__dirname, 'flags');
+const path = require('path');
+const flagsPath = path.join(require('os').homedir(), 'Desktop','flags');
 const flagsUrl = 'http://ls.betradar.com/ls/crest/big/';
 const extension = '.png';
 let fileindex = 0;
@@ -52,7 +51,7 @@ const requestAsync = async function (flagsUrl, file) {
         result = 'notFound';
       } else if (res.headers['content-type'].includes('image/png')) {
 
-        const flagPath = path.join(__dirname, 'flags', file.toString() + extension);
+        const flagPath = path.join(flagsPath, file.toString() + extension);
         try {
           await saveFile(uri, flagPath);
           result = 'found';
@@ -90,7 +89,7 @@ const waitForAllDownloads = async function() {
 const download = async function(id) {
 
   let result = null;
-  const pathToCheck = path.join(__dirname, 'flags', id.toString() + extension);
+  const pathToCheck = path.join(flagsPath, id.toString() + extension);
 
   if (!fs.existsSync(pathToCheck)) {
     result  = await requestAsync(flagsUrl, id);
@@ -125,7 +124,7 @@ const downloadAllNew = async (ids, send) => {
 
 
 function createFlagsDirIfNecessary() {
-  const dir = path.join(__dirname, 'flags');
+  const dir = path.join(flagsPath);
   if (!fs.existsSync(dir)) {
     fs.mkdirSync(dir);
   }
