@@ -6,21 +6,20 @@
   "dependencies": {
     "express": "^4.8.7",
     "linereader": "^1.0.0",
-    "request": "^2.40.0"
+    "request": "^2.40.0",
+    "line-reader": "^0.2.4"
   },
   "devDependencies": {
     "cli-progress": "^2.1.1",
     "electron": "^4.0.5",
     "electron-builder": "^20.38.5",
-    "electron-packager": "^13.1.0",
-    "line-reader": "^0.2.4"
+    "electron-packager": "^13.1.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "electron .",
-    "pack": "build --dir",
-    "dist": "build",
-    "pack": "electron-packager . electron-tutorial-app --overwrite --asar=true --platform=win32 --arch=ia32 --icon=build/steal.ico --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"Bet Steal\""
+    "pack": "electron-packager . bet-steal --overwrite --asar=true --platform=win32 --arch=ia32 --icon=build/steal.ico --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"Bet Steal\"",
+    "dist": "build"
   },
   "build": {
     "dmg": {

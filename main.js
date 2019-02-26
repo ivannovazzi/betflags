@@ -1,5 +1,6 @@
-const { app, BrowserWindow } = require('electron')
+const { app, BrowserWindow, shell } = require('electron')
 const { downloader } = require('./src/downloader');
+const path = require('path');
 
 let win;
 function createWindow () {
@@ -28,6 +29,12 @@ const runExec = async (filePath) => {
   downloader(filePath, send);
 }
 
+const finish = () => {
+  shell.openItem(path.join(__dirname, 'src', 'flags'));
+  setTimeout(() => win.close(), 3000);
+}
+
 app.on('ready', createWindow);
 
 exports.runExec = runExec;
+exports.finish = finish;

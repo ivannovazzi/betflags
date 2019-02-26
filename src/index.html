@@ -144,6 +144,7 @@
       const shell = electron.shell;
       const ipcRenderer = electron.ipcRenderer;
       const runExec = electron.remote.require('./main').runExec;
+      const finish = electron.remote.require('./main').finish;
       const fileToRead = document.getElementById('myFile');
       const button = document.getElementById('myBtn');
       const barBox = document.getElementById('bar__box');
@@ -182,7 +183,6 @@
       }
 
       const end = function() {
-        console.log('end');
         clearInterval(buttonInterval);
         button.innerHTML = 'Enjoy your flags';
         button.className = 'success';
@@ -194,9 +194,7 @@
       const onClick = function() {
         if (run) {
           button.disabled = true;
-          shell.openItem(__dirname + '/flags');
-          const remote = require('electron').remote
-          electron.remote.getCurrentWindow().close();
+          finish();
         } else {
           fileToRead.click();
         }

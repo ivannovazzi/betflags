@@ -2,7 +2,6 @@ const fs = require('fs');
 const path = require('path');
 const request = require('request');
 const lineReader = require('line-reader');
-const _cliProgress = require('cli-progress');
 const filelist = new Array(); 
 
 const flagsPath = path.join(__dirname, 'flags');
