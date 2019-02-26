@@ -17,7 +17,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "electron .",
-    "pack": "electron-packager . bet-steal --overwrite --platform=win32 --arch=ia32 --icon=build/steal.ico --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"Bet Steal\"",
+    bs"pack": "electron-packager . bet-steal --overwrite --platform=win32 --arch=ia32 --icon=src/assets/steal.ico --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"Bet Steal\"",
     "dist": "build"
   },
   "build": {
